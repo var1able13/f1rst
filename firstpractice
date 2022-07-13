@@ -7,6 +7,7 @@ int main()
 {
     int z;
     int sum = 0;
+    int l = 0;
     printf("Enter the number:");
     scanf_s("%d", &z);
     if (z <= 0) { printf("Input Error"); return 0; }
@@ -17,11 +18,13 @@ int main()
         for (int y = 0; sum <= z; y++)
         {
             sum = x * x * x + y * y * y;
-            if (sum == z)
-                printf("%d = %d ^ 3 + %d ^ 3\n",z, x, y);
+            if (sum == z) {
+                l = 1;
+                printf("%d = %d ^ 3 + %d ^ 3\n", z, x, y);
+            }
 
         }
     }
-    
+    if (l == 0) printf("The entered number cannot be divided into the sum of the cubes of two numbers.");
     return 0;
 }
